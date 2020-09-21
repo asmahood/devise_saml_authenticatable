@@ -69,7 +69,7 @@ module Devise
             begin
               Devise.saml_update_resource_hook.call(resource, decorated_response, auth_value)
             rescue => e
-              logger.info("User(#{auth_value}) failed to create or update with error #{e}: #{e.message}.")
+              logger.info("User(#{auth_value}) failed to create or update with error: (#{e})")
               return nil
             end
           end
